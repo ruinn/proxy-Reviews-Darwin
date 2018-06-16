@@ -1,4 +1,16 @@
-#Info {
+#Header {
+  display: block;
+}
+
+#Overview {
+  display: block;
+}
+
+#Booking {
+  display: block;
+}
+
+#Reviews {
   display: block;
 }
 
