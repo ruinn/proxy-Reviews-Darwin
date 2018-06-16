@@ -1,0 +1,36 @@
+version: '2.1'
+
+services:
+  proxy-reviews-darwins:
+    image: proxy-reviews-darwins
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    depends_on:
+      - overview_app
+      - reviews_app
+      - booking_app
+      - header_app
+
+  overview_app:
+    image: stacey/overview:v2.0
+    ports:
+      - 3002:3002
+
+  reviews_app:
+    image: darwin/reviews:v2.0
+    ports:
+      - 3004:3004
+
+  booking_app:
+    image: jeremy/booking:v2.0
+    ports:
+      - 3003:3003
+
+  header_app:
+    image: eric/header:v4.0
+    ports:
+      - 3006:3006
+
